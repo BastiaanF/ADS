@@ -1,4 +1,4 @@
-// Merge two sorted arrays
+// Merge two sorted integer arrays.
 public static int[] merge(int[] arr1, int[] arr2) {
       if(arr1 == null && arr2 == null){
           return null;
@@ -32,3 +32,33 @@ public static int[] merge(int[] arr1, int[] arr2) {
 
     return mergeArr;
   }
+  
+// Reverse an integer array.
+public static void reverse(int[] arr) {
+    if(arr == null){
+        return;
+    }
+    for(int i = 0; i < arr.length / 2; i++){
+        int temp = arr[i];
+        arr[i] = arr[arr.length - i - 1];
+        arr[arr.length - i - 1] = temp;
+    }
+  }
+  
+  //Cloning a two dimensional array.
+static double[][] clone(double[][] a) {
+    if(a == null){
+        return null;
+    }
+    if(a.length == 0 || a[0].length == 0){
+        return new double[0][0];
+    }
+    double[][] b = new double[a.length][a[0].length];
+    for(int i = 0; i < a.length; i++){
+        for(int j = 0; j < a[i].length; j++){
+            b[i][j] = a[i][j];
+        }
+    }
+
+    return b;
+ }
